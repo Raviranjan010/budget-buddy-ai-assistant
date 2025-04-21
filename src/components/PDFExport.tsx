@@ -4,6 +4,7 @@ import { Download } from "lucide-react";
 import { BudgetItem } from "./BudgetForm";
 import { useToast } from "@/hooks/use-toast";
 import html2canvas from "html2canvas";
+// Import jsPDF directly for TypeScript type checking
 import jsPDF from "jspdf";
 
 type PDFExportProps = {
@@ -15,7 +16,6 @@ export function PDFExport({ budgetItems }: PDFExportProps) {
 
   const generatePDF = async () => {
     try {
-      const { default: jsPDF } = await import("jspdf");
       toast({
         title: "Generating PDF",
         description: "Please wait while we create your budget report...",
